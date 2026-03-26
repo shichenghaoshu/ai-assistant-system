@@ -49,6 +49,7 @@ describe('LoginPage', () => {
       </MemoryRouter>,
     )
 
+    expect(screen.getByText('把学习计划、习惯打卡与考试反馈整理进一个连续工作台。')).toBeInTheDocument()
     expect(screen.getByLabelText('邮箱')).toHaveValue('saved@example.com')
     expect(screen.getByRole('button', { name: '登录' })).toBeInTheDocument()
   })

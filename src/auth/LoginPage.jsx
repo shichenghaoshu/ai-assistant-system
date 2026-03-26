@@ -312,8 +312,9 @@ function LoginPage() {
     <main className="auth-page">
       <div className="auth-shell">
         <header className="auth-hero">
+          <div className="auth-eyebrow">Study Operations</div>
           <h1>小打卡</h1>
-          <p>简单好用的学习打卡工具</p>
+          <p>把学习计划、习惯打卡与考试反馈整理进一个连续工作台。</p>
         </header>
 
         <section className="auth-card">

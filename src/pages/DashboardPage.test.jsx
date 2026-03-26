@@ -61,6 +61,8 @@ describe('DashboardPage', () => {
     )
 
     expect(screen.getByText('shi')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '账户与档案' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '今日节奏' })).toBeInTheDocument()
     expect(screen.getByText('当前还没有学习计划')).toBeInTheDocument()
     expect(screen.getByText('当前还没有任务记录')).toBeInTheDocument()
 

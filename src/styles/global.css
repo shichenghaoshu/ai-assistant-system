@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -11,8 +13,11 @@ body,
 body {
   margin: 0;
   min-height: 100vh;
+  font-family: 'Noto Sans SC', 'PingFang SC', sans-serif;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 button,
@@ -20,6 +25,17 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+.topbar-title,
+.page-title,
+.metric-card strong,
+.focus-clock {
+  font-family: 'Space Grotesk', 'Noto Sans SC', sans-serif;
 }
 
 #root {

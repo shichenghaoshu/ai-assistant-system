@@ -7,8 +7,10 @@ function Sidebar() {
     <aside className="sidebar">
       <div className="sidebar-brand">
         <div className="sidebar-mark">小打卡</div>
-        <div>
+        <div className="sidebar-brand-copy">
+          <div className="sidebar-eyebrow">Study Operations</div>
           <div className="sidebar-title">学习打卡助手</div>
+          <div className="sidebar-subtitle">计划、习惯、考试与奖励被整理进一个连续的学习工作流。</div>
         </div>
       </div>
 

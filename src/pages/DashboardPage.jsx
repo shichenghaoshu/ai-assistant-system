@@ -106,108 +106,115 @@ function DashboardPage() {
 
       {!isLoading && !error ? (
         <div className="page-stack">
-          <div className="dashboard-hero-grid">
-            <article className="data-card summary-card">
+          <section className="dashboard-intro">
+            <article className="data-card summary-card summary-card-hero">
               <div className="section-heading">
-                <span className="section-eyebrow">当前档案</span>
-                <h3>账户摘要</h3>
+                <span className="section-eyebrow">Account Desk</span>
+                <h3>账户与档案</h3>
               </div>
-              <div className="summary-head">
-                <div
-                  className="profile-avatar"
-                  style={{ background: profile?.avatar_color ?? 'linear-gradient(135deg, #3b82f6, #1d4ed8)' }}
-                >
-                  {(profile?.profile_name ?? session?.user?.email ?? '?').slice(0, 1).toUpperCase()}
+              <div className="summary-hero">
+                <div className="summary-head summary-head-hero">
+                  <div
+                    className="profile-avatar"
+                    style={{ background: profile?.avatar_color ?? 'linear-gradient(135deg, #3b82f6, #1d4ed8)' }}
+                  >
+                    {(profile?.profile_name ?? session?.user?.email ?? '?').slice(0, 1).toUpperCase()}
+                  </div>
+                  <div>
+                    <div className="summary-title">{profile?.profile_name ?? '未找到档案'}</div>
+                    <div className="summary-meta">{session?.user?.email ?? '未登录'}</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="summary-title">{profile?.profile_name ?? '未找到档案'}</div>
-                  <div className="summary-meta">{session?.user?.email ?? '未登录'}</div>
-                </div>
+                <dl className="summary-list summary-list-inline">
+                  <div>
+                    <dt>账号 ID</dt>
+                    <dd>{session?.user?.id ?? '--'}</dd>
+                  </div>
+                  <div>
+                    <dt>档案 ID</dt>
+                    <dd>{profile?.id ?? '暂无档案'}</dd>
+                  </div>
+                  <div>
+                    <dt>默认档案</dt>
+                    <dd>{profile?.is_default ? '是' : '否'}</dd>
+                  </div>
+                </dl>
               </div>
-              <dl className="summary-list">
-                <div>
-                  <dt>账号 ID</dt>
-                  <dd>{session?.user?.id ?? '--'}</dd>
-                </div>
-                <div>
-                  <dt>档案 ID</dt>
-                  <dd>{profile?.id ?? '暂无档案'}</dd>
-                </div>
-                <div>
-                  <dt>默认档案</dt>
-                  <dd>{profile?.is_default ? '是' : '否'}</dd>
-                </div>
-              </dl>
             </article>
 
-            <div className="metric-grid">
-              <article className="metric-card">
+            <div className="metric-strip">
+              <article className="metric-card metric-stat">
                 <span className="metric-label">学习计划</span>
                 <strong>{metrics.plans}</strong>
                 <p>当前档案下的计划总数</p>
               </article>
-              <article className="metric-card">
+              <article className="metric-card metric-stat">
                 <span className="metric-label">任务记录</span>
                 <strong>{metrics.tasks}</strong>
                 <p>当前档案下的任务条目</p>
               </article>
-              <article className="metric-card">
+              <article className="metric-card metric-stat">
                 <span className="metric-label">行为习惯</span>
                 <strong>{metrics.habits}</strong>
                 <p>当前档案下的习惯配置</p>
               </article>
-              <article className="metric-card">
+              <article className="metric-card metric-stat">
                 <span className="metric-label">兑换记录</span>
                 <strong>{metrics.redemptions}</strong>
                 <p>当前账号下的会员兑换次数</p>
               </article>
             </div>
-          </div>
+          </section>
 
           <div className="dashboard-focus-grid">
-            <article className="data-card focus-card">
+            <article className="data-card focus-card focus-card-hero">
               <div className="section-heading">
-                <span className="section-eyebrow">Focus Timer</span>
-                <h3>专注计时器</h3>
+                <span className="section-eyebrow">Daily Rhythm</span>
+                <h3>今日节奏</h3>
               </div>
-              <div className="focus-clock" aria-label="专注时长">
-                {formatDuration(focusSeconds)}
-              </div>
-              <div className="focus-actions">
-                <button className="primary-button" type="button" onClick={isFocusRunning ? pauseFocus : startFocus}>
-                  {isFocusRunning ? '暂停专注' : '开始专注'}
-                </button>
-                <button className="secondary-button" type="button" onClick={resetFocus}>
-                  重置计时
-                </button>
-              </div>
-
-              {activeTask ? (
-                <div className="status-panel">
-                  <strong>当前专注任务</strong>
-                  <p>{getTaskTitle(activeTask)}</p>
-                  <div className="status-grid">
-                    <div className="status-cell">
-                      <span>任务日期</span>
-                      <strong>{formatDate(activeTask.task_date)}</strong>
-                    </div>
-                    <div className="status-cell">
-                      <span>完成进度</span>
-                      <strong>{formatTaskProgress(activeTask)}</strong>
-                    </div>
+              <div className="focus-stage">
+                <div className="focus-primary">
+                  <div className="focus-clock" aria-label="专注时长">
+                    {formatDuration(focusSeconds)}
+                  </div>
+                  <p className="focus-copy">把当前学习节奏稳定在一个可持续的专注循环里，不需要额外装饰性摘要。</p>
+                  <div className="focus-actions">
+                    <button className="primary-button" type="button" onClick={isFocusRunning ? pauseFocus : startFocus}>
+                      {isFocusRunning ? '暂停专注' : '开始专注'}
+                    </button>
+                    <button className="secondary-button" type="button" onClick={resetFocus}>
+                      重置计时
+                    </button>
                   </div>
                 </div>
-              ) : (
-                <div className="empty-state">
-                  <p>今天还没有任务，先从学习计划开始。</p>
-                  <Link className="inline-link" to="/plans/add">
-                    去添加学习计划
-                  </Link>
-                </div>
-              )}
+
+                {activeTask ? (
+                  <div className="status-panel">
+                    <strong>当前专注任务</strong>
+                    <p>{getTaskTitle(activeTask)}</p>
+                    <div className="status-grid">
+                      <div className="status-cell">
+                        <span>任务日期</span>
+                        <strong>{formatDate(activeTask.task_date)}</strong>
+                      </div>
+                      <div className="status-cell">
+                        <span>完成进度</span>
+                        <strong>{formatTaskProgress(activeTask)}</strong>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="empty-state">
+                    <p>今天还没有任务，先从学习计划开始。</p>
+                    <Link className="inline-link" to="/plans/add">
+                      去添加学习计划
+                    </Link>
+                  </div>
+                )}
+              </div>
             </article>
 
-            <article className="data-card">
+            <article className="data-card dashboard-today-card">
               <div className="section-heading">
                 <span className="section-eyebrow">Today</span>
                 <h3>今天的任务</h3>
@@ -240,11 +247,11 @@ function DashboardPage() {
             </article>
           </div>
 
-          <div className="split-grid">
+          <div className="split-grid split-grid-emphasis">
             <article className="data-card">
               <div className="section-heading">
                 <span className="section-eyebrow">Recent Plans</span>
-                <h3>最近计划</h3>
+                <h3>计划回看</h3>
               </div>
               {recentPlans.length === 0 ? (
                 <div className="empty-state">
@@ -274,7 +281,7 @@ function DashboardPage() {
             <article className="data-card">
               <div className="section-heading">
                 <span className="section-eyebrow">Recent Tasks</span>
-                <h3>最近任务</h3>
+                <h3>执行记录</h3>
               </div>
               {recentTasks.length === 0 ? (
                 <div className="empty-state">
@@ -307,7 +314,7 @@ function DashboardPage() {
           <article className="data-card">
             <div className="section-heading">
               <span className="section-eyebrow">Next Steps</span>
-              <h3>快捷入口</h3>
+              <h3>工作入口</h3>
             </div>
             <div className="quick-link-grid">
               <Link className="quick-link-card" to="/plans/manage">

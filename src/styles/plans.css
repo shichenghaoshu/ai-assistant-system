@@ -6,7 +6,7 @@
 .plans-summary-grid {
   display: grid;
   grid-template-columns: 1.3fr repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: 14px;
 }
 
 .plans-toolbar,
@@ -15,6 +15,11 @@
 .plan-form-shell {
   display: grid;
   gap: 16px;
+}
+
+.plans-toolbar {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
 }
 
 .plans-form-shell {
@@ -31,6 +36,7 @@
 
 .plans-table-wrap {
   overflow: auto;
+  padding: 8px;
 }
 
 .plans-table {
@@ -41,16 +47,20 @@
 .plans-table th,
 .plans-table td {
   padding: 14px 12px;
-  border-bottom: 1px solid rgba(59, 130, 246, 0.12);
+  border-bottom: 1px solid rgba(17, 24, 39, 0.08);
   text-align: left;
   vertical-align: top;
 }
 
 .plans-table th {
   color: var(--muted);
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+.plans-table tbody tr:hover {
+  background: rgba(47, 92, 255, 0.04);
 }
 
 .plan-main-cell,
@@ -93,9 +103,7 @@
   width: 100%;
   min-height: 46px;
   padding: 12px 14px;
-  border: 1px solid rgba(59, 130, 246, 0.18);
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.84);
+  border-radius: 18px;
   color: var(--text);
   box-sizing: border-box;
 }
@@ -146,14 +154,7 @@
 }
 
 .empty-state {
-  min-height: 168px;
-  display: grid;
-  place-items: center;
   gap: 10px;
-  padding: 32px;
-  border-radius: 20px;
-  border: 1px dashed rgba(59, 130, 246, 0.22);
-  color: var(--muted);
 }
 
 .batch-draft-list {
@@ -164,8 +165,8 @@
 .batch-draft-card {
   padding: 14px;
   border-radius: 18px;
-  border: 1px solid rgba(59, 130, 246, 0.14);
-  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  background: rgba(255, 255, 255, 0.62);
 }
 
 .plan-summary-card {
@@ -180,11 +181,16 @@
   margin-top: 14px;
   padding: 14px;
   border-radius: 18px;
-  background: rgba(59, 130, 246, 0.07);
+  background: rgba(47, 92, 255, 0.06);
 }
 
 .batch-count {
   margin: 4px 0 14px;
+}
+
+.plans-row-actions {
+  display: flex;
+  justify-content: flex-start;
 }
 
 @media (max-width: 1100px) {
@@ -196,5 +202,8 @@
   .field-span-2 {
     grid-column: span 1;
   }
-}
 
+  .plans-toolbar {
+    grid-template-columns: 1fr;
+  }
+}
