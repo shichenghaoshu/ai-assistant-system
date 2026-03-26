@@ -4,5 +4,7 @@ dist/
 tmp/
 这课值了学习管理系统/
 .env.local
+.vercel/
 playwright/.auth/
 captures/
+.vercel
