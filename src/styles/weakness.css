@@ -1,0 +1,118 @@
+.weakness-page {
+  display: grid;
+  gap: 22px;
+}
+
+.weakness-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.weakness-summary-card {
+  display: grid;
+  gap: 10px;
+  min-height: 154px;
+}
+
+.weakness-summary-card strong {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.weakness-main-grid {
+  align-items: start;
+}
+
+.weakness-card-list,
+.weakness-subject-list {
+  display: grid;
+  gap: 12px;
+}
+
+.weakness-report-card,
+.weakness-subject-card {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.weakness-report-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.weakness-report-stats {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.weakness-meter {
+  position: relative;
+  margin-top: 12px;
+  height: 10px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(37, 99, 235, 0.12);
+}
+
+.weakness-meter span {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+}
+
+.weakness-add-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.85fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.weakness-form {
+  display: grid;
+  gap: 18px;
+}
+
+.weakness-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.field-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.feedback-banner {
+  margin-bottom: 16px;
+}
+
+.weakness-action-card .quick-link-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 1200px) {
+  .weakness-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .weakness-add-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .weakness-summary-grid,
+  .weakness-form-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,81 @@
+.system-tools-page {
+  display: grid;
+  gap: 22px;
+}
+
+.system-tool-card {
+  display: grid;
+  gap: 18px;
+}
+
+.system-tool-form {
+  display: grid;
+  gap: 14px;
+}
+
+.system-tool-note {
+  display: grid;
+  gap: 6px;
+  padding: 14px 16px;
+  border: 1px solid rgba(59, 130, 246, 0.12);
+  border-radius: 16px;
+  background: rgba(248, 251, 255, 0.72);
+}
+
+.system-tool-note span {
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.tool-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.tool-stat {
+  display: grid;
+  gap: 6px;
+  padding: 14px 16px;
+  border: 1px solid rgba(59, 130, 246, 0.12);
+  border-radius: 16px;
+  background: rgba(248, 251, 255, 0.72);
+}
+
+.tool-stat span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.tool-stat strong {
+  font-size: 1.1rem;
+}
+
+.tool-json-preview {
+  margin: 0;
+  padding: 16px;
+  border-radius: 18px;
+  background: #0f172a;
+  color: #e2e8f0;
+  overflow: auto;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.system-tool-upload {
+  display: grid;
+  gap: 14px;
+}
+
+.system-tool-steps {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+@media (max-width: 720px) {
+  .tool-stat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

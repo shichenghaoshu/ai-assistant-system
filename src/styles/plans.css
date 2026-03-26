@@ -1,0 +1,200 @@
+.plans-page {
+  display: grid;
+  gap: 22px;
+}
+
+.plans-summary-grid {
+  display: grid;
+  grid-template-columns: 1.3fr repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.plans-toolbar,
+.plan-form-grid,
+.plans-form-shell,
+.plan-form-shell {
+  display: grid;
+  gap: 16px;
+}
+
+.plans-form-shell {
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+  align-items: start;
+}
+
+.plans-actions,
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.plans-table-wrap {
+  overflow: auto;
+}
+
+.plans-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.plans-table th,
+.plans-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.12);
+  text-align: left;
+  vertical-align: top;
+}
+
+.plans-table th {
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.plan-main-cell,
+.plan-task-summary,
+.batch-draft-note,
+.draft-summary,
+.batch-count {
+  display: grid;
+  gap: 4px;
+}
+
+.plan-task-summary strong {
+  font-size: 1rem;
+}
+
+.plan-task-summary span,
+.batch-draft-note,
+.draft-summary span,
+.batch-count {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.plan-form-card {
+  min-width: 0;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field-label {
+  font-size: 0.86rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.field-input {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.84);
+  color: var(--text);
+  box-sizing: border-box;
+}
+
+.field-input:focus {
+  outline: 2px solid rgba(37, 99, 235, 0.22);
+  outline-offset: 1px;
+}
+
+.field-textarea {
+  min-height: 124px;
+  resize: vertical;
+}
+
+.field-textarea-large {
+  min-height: 210px;
+}
+
+.field-span-2 {
+  grid-column: span 2;
+}
+
+.feedback-banner {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  font-size: 0.92rem;
+}
+
+.feedback-banner.is-success {
+  background: rgba(16, 185, 129, 0.12);
+  color: #047857;
+}
+
+.feedback-banner.is-error {
+  background: rgba(239, 68, 68, 0.12);
+  color: #b91c1c;
+}
+
+.feedback-banner.is-warning {
+  background: rgba(245, 158, 11, 0.16);
+  color: #92400e;
+}
+
+.feedback-banner.is-info {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--accent-strong);
+}
+
+.empty-state {
+  min-height: 168px;
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  padding: 32px;
+  border-radius: 20px;
+  border: 1px dashed rgba(59, 130, 246, 0.22);
+  color: var(--muted);
+}
+
+.batch-draft-list {
+  display: grid;
+  gap: 12px;
+}
+
+.batch-draft-card {
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(59, 130, 246, 0.14);
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.plan-summary-card {
+  min-width: 0;
+}
+
+.plan-form-shell .data-card {
+  min-width: 0;
+}
+
+.draft-summary {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(59, 130, 246, 0.07);
+}
+
+.batch-count {
+  margin: 4px 0 14px;
+}
+
+@media (max-width: 1100px) {
+  .plans-summary-grid,
+  .plans-form-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .field-span-2 {
+    grid-column: span 1;
+  }
+}
+

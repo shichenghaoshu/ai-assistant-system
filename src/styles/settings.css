@@ -1,0 +1,48 @@
+.settings-rule-form {
+  display: grid;
+  gap: 16px;
+}
+
+.settings-rule-field {
+  display: grid;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1px solid rgba(59, 130, 246, 0.12);
+  border-radius: 16px;
+  background: rgba(248, 251, 255, 0.72);
+}
+
+.settings-rule-field > span {
+  font-weight: 700;
+}
+
+.settings-rule-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.settings-rule-inline-wide {
+  align-items: stretch;
+}
+
+.settings-rule-inline .field-input {
+  min-width: 120px;
+}
+
+.settings-rule-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  height: 48px;
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.88);
+  font-weight: 600;
+}
+
+.settings-rule-flag input {
+  margin: 0;
+}
